@@ -1,6 +1,6 @@
 {
-  "name": "Horario Escolar Profesional 2025",
-  "description": "Sistema de gestión de tiempos escolares con alertas sincronizadas y visualización de alta visibilidad para aulas.",
+  "name": "Timbre",
+  "description": "Sistema de gestión de tiempos escolares con alertas sincronizadas.",
   "requestFramePermissions": [
     "microphone"
   ]

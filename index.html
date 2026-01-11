@@ -4,45 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Horario Escolar 2025-26 | Control de Timbre</title>
-    <meta name="description" content="Gestión profesional del horario escolar con avisos sonoros y reloj en tiempo real.">
+    <title>Timbre | Horario Escolar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #4f46e5; }
-        body { 
-            font-family: 'Outfit', sans-serif;
-            -webkit-tap-highlight-color: transparent;
+        body { font-family: 'Outfit', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        @keyframes ring {
+            0% { transform: rotate(0); }
+            10% { transform: rotate(15deg); }
+            20% { transform: rotate(-15deg); }
+            30% { transform: rotate(10deg); }
+            40% { transform: rotate(-10deg); }
+            50% { transform: rotate(0); }
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .clock-pulse {
-            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse-ring {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        .bell-shake {
-            animation: shake 0.5s ease-in-out infinite;
-        }
-        @keyframes shake {
-            0%, 100% { transform: rotate(0); }
-            25% { transform: rotate(10deg); }
-            75% { transform: rotate(-10deg); }
-        }
+        .bell-active { animation: ring 0.6s ease-in-out infinite; }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@19.0.0",
-    "react-dom": "https://esm.sh/react-dom@19.0.0",
-    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react": "https://esm.sh/react@18.2.0",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
     "lucide-react": "https://esm.sh/lucide-react@0.460.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/"
@@ -50,7 +35,12 @@
 }
 </script>
 </head>
-<body class="bg-slate-100 text-slate-900 min-h-screen">
-    <div id="root"></div>
+<body class="bg-slate-50">
+    <div id="root">
+        <div class="flex items-center justify-center min-h-screen">
+            <p class="text-slate-400 font-medium animate-pulse">Iniciando Timbre...</p>
+        </div>
+    </div>
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>
