@@ -1,0 +1,7 @@
+{
+  "name": "Horario Escolar 2025-2026",
+  "description": "Aplicación para el seguimiento del timbre escolar con alertas sonoras y vibración basadas en el horario oficial.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
